@@ -1,0 +1,5 @@
+{
+  "weights": "D:\\APP\\game\\阿拉德英雄传Ver2.21\\阿拉德英雄传\\Work\\train\\runs\\named116_yolo11n\\weights\\best.pt",
+  "source": "D:\\APP\\game\\阿拉德英雄传Ver2.21\\阿拉德英雄传\\Work\\dataset_named_1000\\yolo\\detection\\images\\val\\scene_019267.png",
+  "confidence": 0.25
+}

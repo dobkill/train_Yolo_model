@@ -1,0 +1,25 @@
+{
+  "id": "8fcf1279bbcf460d80d8de9316a5a842",
+  "created_at": "2026-10-01T18:38:53",
+  "filename": "blank.png",
+  "width": 640,
+  "height": 480,
+  "model": "YOLO11n",
+  "device": "Tesla V100-SXM2-16GB",
+  "weights_sha256": "9b1958b223a1460687a10e57a3d83059c845428ffebd96e56088bb472c033495",
+  "input_sha256": "97a276960a5aeae3a46a7220a759ac79563b2a2949bd38139ad25792343f7c38",
+  "bbox_type": "predicted_visible_bbox",
+  "parameters": {
+    "confidence": 0.95,
+    "iou": 0.7,
+    "imgsz": 640
+  },
+  "detections": [],
+  "count": 0,
+  "class_count": 0,
+  "inference_ms": 24.64,
+  "total_ms": 55.4,
+  "original_url": "/api/results/8fcf1279bbcf460d80d8de9316a5a842/original.png",
+  "annotated_url": "/api/results/8fcf1279bbcf460d80d8de9316a5a842/annotated.png",
+  "json_url": "/api/results/8fcf1279bbcf460d80d8de9316a5a842/result.json"
+}

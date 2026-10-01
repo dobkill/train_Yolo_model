@@ -1,0 +1,38 @@
+{
+  "id": "24aeaa1831d2412bb195b01749cf7f46",
+  "created_at": "2026-10-01T19:14:10",
+  "filename": "blank.png",
+  "width": 640,
+  "height": 480,
+  "model": "YOLO11n · 116 类 · best.pt",
+  "model_key": "named116_best",
+  "device": "Tesla V100-SXM2-16GB",
+  "weights_sha256": "9b1958b223a1460687a10e57a3d83059c845428ffebd96e56088bb472c033495",
+  "input_sha256": "97a276960a5aeae3a46a7220a759ac79563b2a2949bd38139ad25792343f7c38",
+  "bbox_type": "predicted_visible_bbox",
+  "parameters": {
+    "confidence": 0.95,
+    "iou": 0.7,
+    "imgsz": 640
+  },
+  "detections": [],
+  "count": 0,
+  "class_count": 0,
+  "timing_ms": {
+    "preprocess": 2.4,
+    "inference_pure": 25.54,
+    "postprocess": 0.9,
+    "drawing": 4.19,
+    "total": 80.5
+  },
+  "gpu": {
+    "available": true,
+    "util_pct": 1,
+    "mem_used_mb": 1042.1,
+    "mem_total_mb": 16384.0,
+    "mem_pct": 6.4
+  },
+  "original_url": "/api/results/24aeaa1831d2412bb195b01749cf7f46/original.png",
+  "annotated_url": "/api/results/24aeaa1831d2412bb195b01749cf7f46/annotated.png",
+  "json_url": "/api/results/24aeaa1831d2412bb195b01749cf7f46/result.json"
+}

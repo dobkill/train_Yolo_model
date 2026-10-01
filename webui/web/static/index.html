@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>阿拉德 · 图片目标识别</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/app.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="/" aria-label="阿拉德图片识别首页"><img src="/favicon.svg" alt=""><span>阿拉德<span class="brand-sub">VISION STUDIO</span></span></a>
+    <div class="nav-active"><span class="crosshair">⌖</span> 图片目标识别 <span class="nav-dot"></span></div>
+    <div class="queue-heading"><span>图片队列</span><span id="queue-count">0</span></div>
+    <div id="queue" class="queue"><p class="queue-empty">把想识别的画面<br>添加到这里。</p></div>
+    <button class="add-more" id="add-more">＋ 添加图片</button>
+    <button class="add-folder" id="add-folder">▣ 添加文件夹</button>
+    <div class="model-card"><div class="model-label"><i id="model-dot"></i><span id="model-state">正在连接模型</span></div><strong id="model-name">—</strong><p id="device-name">本地模型</p><div class="model-divider"></div><small>图片只在本机处理<br>关闭网页后服务仍可使用</small></div>
+    <div class="sidebar-foot">ARAD HEROES <span>01 / DETECT</span></div>
+  </aside>
+  <main>
+    <header class="page-header"><div><div class="eyebrow">图像工作台 <span>/</span> OBJECT DETECTION</div><h1>图片目标识别<span class="heading-dot">.</span></h1><p>选择游戏画面，让模型找出角色与怪物。</p></div><button class="button primary header-upload" id="choose-top"><span>＋</span> 选择图片</button></header>
+    <section class="summary-strip"><span class="ready-pill" id="ready-pill"><i></i><span>连接中</span></span><span id="summary-model">模型 —</span><span id="summary-classes">— 类</span><span class="score" id="score-wrap" hidden>合成测试集 mAP50 <b id="test-score">—</b><span class="info" title="此指标来自合成测试集，不代表真实游戏截图表现。">i</span></span></section>
+    <div class="workspace">
+      <section class="preview-panel">
+        <div class="panel-heading"><div class="panel-title"><span class="step-number">01</span><h2>画面预览</h2></div><div class="view-switch" role="group" aria-label="预览模式"><button id="view-boxes" class="active" aria-pressed="true">检测结果</button><button id="view-original" aria-pressed="false">原图</button></div></div>
+        <div id="dropzone" class="image-stage" tabindex="0" aria-label="图片预览区，可拖入图片或文件夹，或按回车选择">
+          <div id="empty-state" class="empty-state"><div class="upload-symbol"><svg width="42" height="42" viewBox="0 0 42 42" fill="none" aria-hidden="true"><rect x="5" y="6" width="32" height="30" rx="7" stroke="currentColor" stroke-width="1.8"/><path d="m6 29 10-10 8 8 5-5 7 7" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="29" cy="14" r="3" fill="currentColor"/></svg><span>＋</span></div><h3>把游戏画面拖到这里</h3><p>支持一次拖入整个文件夹，或从电脑中选择图片</p><button id="choose-center" class="button primary">选择图片 <span>↗</span></button><small>PNG / JPG / WEBP / BMP · 每张不超过 25 MB</small></div>
+          <canvas id="canvas" hidden aria-label="识别目标及检测框"></canvas>
+          <div class="drag-overlay">松开鼠标，添加图片</div>
+          <div id="processing" class="processing" hidden><span class="spinner"></span><strong>正在识别画面…</strong><span>本地模型处理中</span></div>
+        </div>
+        <div class="image-footer"><span id="file-info">等待选择图片</span><span id="preview-hint">拖拽 · 选择 · 识别</span></div>
+        <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+        <div class="examples"><div class="examples-heading"><span>先试一张示例</span><small>来自已生成的测试场景</small></div><div id="examples" class="example-grid"></div></div>
+      </section>
+      <aside class="controls-panel">
+        <div class="panel-heading"><div class="panel-title"><span class="step-number">02</span><h2>识别设置</h2></div><span class="tiny-tag">DETECTION</span></div>
+        <div class="settings">
+          <label class="slider-label" for="model-select">识别模型 <span class="model-loading" id="model-loading" hidden>切换中…</span></label>
+          <select id="model-select" aria-label="选择识别模型"><option value="">加载中…</option></select>
+          <p class="field-help" id="model-help">—</p>
+          <label class="slider-label" for="confidence">置信度阈值 <output id="confidence-value">25%</output></label><input id="confidence" type="range" min="1" max="95" value="25"><p class="field-help">调高可减少误检，调低可找回遗漏目标。</p>
+          <details class="advanced"><summary>更多设置 <span>＋</span></summary><label class="slider-label" for="iou">重叠框抑制 <output id="iou-value">0.70</output></label><input id="iou" type="range" min="10" max="95" value="70"><label class="size-label" for="imgsz">识别尺寸</label><select id="imgsz"><option value="640">640 · 标准</option><option value="960">960 · 更细致</option><option value="1280">1280 · 大图 / 小目标</option></select><p class="field-help">更大的尺寸会增加识别用时。</p></details>
+          <button id="detect" class="button primary detect-button" disabled><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6 3H3v3m11-3h3v3M3 14v3h3m11-3v3h-3" stroke="currentColor" stroke-width="1.8"/><circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.8"/></svg><span>开始识别</span></button>
+        </div>
+        <div class="results-heading"><h2>识别结果 <span id="result-badge">0</span></h2><span id="result-time">—</span></div>
+        <div class="result-stats"><div><strong id="target-count">—</strong><span>检测目标</span></div><div><strong id="class-count">—</strong><span>目标类别</span></div><div><strong id="infer-time">—</strong><span>纯推理耗时</span></div></div>
+        <div class="perf-panel" id="perf-panel" hidden>
+          <div class="perf-row"><span class="perf-label">预处理</span><span class="perf-value" id="perf-pre">—</span></div>
+          <div class="perf-row"><span class="perf-label">模型推理</span><span class="perf-value strong" id="perf-infer">—</span></div>
+          <div class="perf-row"><span class="perf-label">后处理</span><span class="perf-value" id="perf-post">—</span></div>
+          <div class="perf-row"><span class="perf-label">绘制标注</span><span class="perf-value" id="perf-draw">—</span></div>
+          <div class="perf-row"><span class="perf-label">端到端</span><span class="perf-value" id="perf-total">—</span></div>
+          <div class="perf-row gpu" id="gpu-row" hidden><span class="perf-label">GPU 利用率</span><span class="perf-value" id="gpu-util">—</span></div>
+          <div class="perf-row gpu" id="gpu-mem-row" hidden><span class="perf-label">显存占用</span><span class="perf-value" id="gpu-mem">—</span></div>
+        </div>
+        <div class="filter-wrap"><label for="class-filter" class="sr-only">筛选识别类别</label><select id="class-filter" disabled><option value="all">全部类别</option></select></div>
+        <div id="result-list" class="result-list"><div class="result-empty"><span>⌖</span><p>目标会出现在这里</p><small>识别后查看类别、置信度与位置</small></div></div>
+        <div class="downloads"><a id="download-image" class="button secondary disabled" aria-disabled="true" title="下载包含所有检测框的 PNG 图片">↓ 标框图片</a><a id="download-json" class="button secondary disabled" aria-disabled="true">↓ 结果 JSON</a></div>
+      </aside>
+    </div>
+    <footer class="page-footer"><span><i></i> 本地推理 · 图片无需上传到云端</span><span>类别名称沿用游戏资源；真实游戏画面效果需另行验证。</span></footer>
+  </main>
+  <input id="file-input" type="file" accept="image/png,image/jpeg,image/webp,image/bmp,.bmp" multiple hidden>
+  <input id="folder-input" type="file" webkitdirectory directory multiple hidden>
+</body>
+</html>

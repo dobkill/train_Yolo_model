@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "checked_at": "2026-10-01 19:14:10",
+  "api_error_cases": {
+    "invalid_image": 400,
+    "invalid_confidence": 400,
+    "invalid_size": 400,
+    "foreign_origin": 403,
+    "path_traversal": 404
+  },
+  "browser_errors": [],
+  "positive_detections": 4,
+  "blank_detections": 0,
+  "model_sha256": "9b1958b223a1460687a10e57a3d83059c845428ffebd96e56088bb472c033495",
+  "example_result_id": "e8c13dcf1a7544129707b57673dbf221",
+  "checks": [
+    "actual_best_checkpoint_inference",
+    "Chinese_filename_and_labels",
+    "multiple_files",
+    "bbox_coordinates",
+    "canvas_boxes",
+    "original_toggle",
+    "class_filter",
+    "PNG_download",
+    "JSON_download",
+    "mobile_layout",
+    "no_detection_state",
+    "switch_result_state",
+    "demo",
+    "drag_drop"
+  ]
+}

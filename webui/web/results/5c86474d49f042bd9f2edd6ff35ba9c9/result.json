@@ -1,0 +1,104 @@
+{
+  "id": "5c86474d49f042bd9f2edd6ff35ba9c9",
+  "created_at": "2026-10-01T18:42:31",
+  "filename": "scene_000004.png",
+  "width": 640,
+  "height": 480,
+  "model": "YOLO11n",
+  "device": "Tesla V100-SXM2-16GB",
+  "weights_sha256": "9b1958b223a1460687a10e57a3d83059c845428ffebd96e56088bb472c033495",
+  "input_sha256": "a07d1ddcd4b898aa7a624cad571cfc14c8d99ca809b033afe691db4e00e0434d",
+  "bbox_type": "predicted_visible_bbox",
+  "parameters": {
+    "confidence": 0.25,
+    "iou": 0.7,
+    "imgsz": 640
+  },
+  "detections": [
+    {
+      "id": 1,
+      "class_id": 25,
+      "class_name": "异化人",
+      "confidence": 0.975102,
+      "bbox_xyxy": [
+        166.34,
+        235.36,
+        236.99,
+        354.02
+      ],
+      "color": "#aa9bb4"
+    },
+    {
+      "id": 2,
+      "class_id": 20,
+      "class_name": "天之驱逐者",
+      "confidence": 0.968149,
+      "bbox_xyxy": [
+        202.95,
+        395.9,
+        245.88,
+        450.26
+      ],
+      "color": "#5fdc5f"
+    },
+    {
+      "id": 3,
+      "class_id": 2,
+      "class_name": "乌拉塔",
+      "confidence": 0.946615,
+      "bbox_xyxy": [
+        333.98,
+        197.59,
+        517.74,
+        343.15
+      ],
+      "color": "#d1a68d"
+    },
+    {
+      "id": 4,
+      "class_id": 95,
+      "class_name": "buwanga_f",
+      "confidence": 0.921041,
+      "bbox_xyxy": [
+        327.11,
+        260.33,
+        451.13,
+        361.79
+      ],
+      "color": "#64cd5a"
+    },
+    {
+      "id": 5,
+      "class_id": 100,
+      "class_name": "iris",
+      "confidence": 0.916046,
+      "bbox_xyxy": [
+        0.01,
+        300.35,
+        61.64,
+        430.39
+      ],
+      "color": "#af8caf"
+    },
+    {
+      "id": 6,
+      "class_id": 47,
+      "class_name": "燃烧僵尸_1",
+      "confidence": 0.813244,
+      "bbox_xyxy": [
+        316.19,
+        287.13,
+        381.33,
+        352.13
+      ],
+      "color": "#54dd6a"
+    }
+  ],
+  "count": 6,
+  "class_count": 6,
+  "inference_ms": 25.42,
+  "total_ms": 121.2,
+  "original_url": "/api/results/5c86474d49f042bd9f2edd6ff35ba9c9/original.png",
+  "annotated_url": "/api/results/5c86474d49f042bd9f2edd6ff35ba9c9/annotated.png",
+  "json_url": "/api/results/5c86474d49f042bd9f2edd6ff35ba9c9/result.json"
+}

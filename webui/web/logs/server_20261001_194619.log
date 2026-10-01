@@ -1,0 +1,21 @@
+Loading model registry...
+Creating new Ultralytics Settings v0.0.8 file  
+View Ultralytics Settings with 'yolo settings' or at 'D:\APP\game\Ver2.21\\Work\webui\.ultralytics\Ultralytics\settings.json'
+Update Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/usage/settings.
+Traceback (most recent call last):
+  File "D:\APP\game\阿拉德英雄传Ver2.21\阿拉德英雄传\Work\webui\web\server.py", line 378, in <module>
+    main()
+  File "D:\APP\game\阿拉德英雄传Ver2.21\阿拉德英雄传\Work\webui\web\server.py", line 370, in main
+    server.detector = Detector()
+                      ^^^^^^^^^^
+  File "D:\APP\game\阿拉德英雄传Ver2.21\阿拉德英雄传\Work\webui\web\server.py", line 58, in __init__
+    setup_ultralytics()
+  File "D:\APP\game\阿拉德英雄传Ver2.21\阿拉德英雄传\Work\webui\runtime.py", line 48, in setup_ultralytics
+    matplotlib.rcParams["axes.unicodeminus"] = False
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "D:\APP\miniconda\envs\yolo\Lib\site-packages\matplotlib\__init__.py", line 778, in __setitem__
+    valid_key = _api.getitem_checked(
+                ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\APP\miniconda\envs\yolo\Lib\site-packages\matplotlib\_api\__init__.py", line 286, in getitem_checked
+    raise _error_cls(list_suggestion_error_msg(k, v, mapping.keys())) from None
+KeyError: "'axes.unicodeminus' is not a valid value for rcParam. Did you mean one of: 'axes.unicode_minus', 'axes.grid.axis', 'axes.autolimit_mode'?"

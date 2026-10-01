@@ -1,0 +1,91 @@
+{
+  "id": "f716035ac9f947e89e623a6aa70bd319",
+  "created_at": "2026-10-01T18:43:02",
+  "filename": "scene_023846.png",
+  "width": 640,
+  "height": 480,
+  "model": "YOLO11n",
+  "device": "Tesla V100-SXM2-16GB",
+  "weights_sha256": "9b1958b223a1460687a10e57a3d83059c845428ffebd96e56088bb472c033495",
+  "input_sha256": "5092a025d3d6bbbf563510f1d15cf090e248ffc935bdd6faedb5baab5bd36d23",
+  "bbox_type": "predicted_visible_bbox",
+  "parameters": {
+    "confidence": 0.25,
+    "iou": 0.7,
+    "imgsz": 640
+  },
+  "detections": [
+    {
+      "id": 1,
+      "class_id": 87,
+      "class_name": "鱼人",
+      "confidence": 0.965363,
+      "bbox_xyxy": [
+        386.58,
+        269.58,
+        486.21,
+        372.48
+      ],
+      "color": "#ccb592"
+    },
+    {
+      "id": 2,
+      "class_id": 35,
+      "class_name": "欧克瑟",
+      "confidence": 0.950854,
+      "bbox_xyxy": [
+        521.23,
+        235.29,
+        594.65,
+        373.29
+      ],
+      "color": "#a0b9be"
+    },
+    {
+      "id": 3,
+      "class_id": 115,
+      "class_name": "zomble",
+      "confidence": 0.869459,
+      "bbox_xyxy": [
+        281.19,
+        344.59,
+        332.61,
+        442.15
+      ],
+      "color": "#50696e"
+    },
+    {
+      "id": 4,
+      "class_id": 32,
+      "class_name": "格日勒图",
+      "confidence": 0.515387,
+      "bbox_xyxy": [
+        320.36,
+        306.5,
+        369.7,
+        382.65
+      ],
+      "color": "#b360ab"
+    },
+    {
+      "id": 5,
+      "class_id": 32,
+      "class_name": "格日勒图",
+      "confidence": 0.410467,
+      "bbox_xyxy": [
+        312.79,
+        289.32,
+        370.16,
+        383.19
+      ],
+      "color": "#b360ab"
+    }
+  ],
+  "count": 5,
+  "class_count": 4,
+  "inference_ms": 26.7,
+  "total_ms": 123.5,
+  "original_url": "/api/results/f716035ac9f947e89e623a6aa70bd319/original.png",
+  "annotated_url": "/api/results/f716035ac9f947e89e623a6aa70bd319/annotated.png",
+  "json_url": "/api/results/f716035ac9f947e89e623a6aa70bd319/result.json"
+}

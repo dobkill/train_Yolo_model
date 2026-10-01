@@ -1,0 +1,98 @@
+Loading model registry...
+READY http://127.0.0.1:8766 (Tesla V100-SXM2-16GB)
+127.0.0.1 - - [01/Oct/2026 19:13:48] "GET /api/health HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from 127.0.0.1 - - [01/Oct/2026 19:13:48] "GET /api/health HTTP/1.1" 200 -
+('127.0.0.1', 60170)
+----------------------------------------
+Exception occurred during processing of request from127.0.0.1 - - [01/Oct/2026 19:13:48] "GET /api/health HTTP/1.1" 200 -
+ ('127.0.0.1', 60184)
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "D:\APP\miniconda\envs\yolo\Lib\socketserver.py", line 691, in process_request_thread
+    self.finish_request(request, client_address)
+  File "D:\APP\miniconda\envs\yolo\Lib\socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "D:\APP\miniconda\envs\yolo\Lib\socketserver.py", line 755, in __init__
+    self.handle()
+  File "D:\APP\miniconda\envs\yolo\Lib\http\server.py", line 440, in handle
+    self.handle_one_request()
+  File "D:\APP\miniconda\envs\yolo\Lib\http\server.py", line 428, in handle_one_request
+    method()
+  File "D:\APP\game\阿拉德英雄传Ver2.21\阿拉德英雄传\Work\train\web\server.py", line 302, in do_GET
+    return self.reply(self.server.detector.info())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\APP\game\阿拉德英雄传Ver2.21\阿拉德英雄传\Work\train\web\server.py", line 276, in reply
+    self.wfile.write(content)
+  File "D:\APP\miniconda\envs\yolo\Lib\socketserver.py", line 691, in process_request_thread
+    self.finish_request(request, client_address)
+  File "D:\APP\miniconda\envs\yolo\Lib\socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "D:\APP\miniconda\envs\yolo\Lib\socketserver.py", line 755, in __init__
+    self.handle()
+  File "D:\APP\miniconda\envs\yolo\Lib\http\server.py", line 440, in handle
+    self.handle_one_request()
+  File "D:\APP\miniconda\envs\yolo\Lib\http\server.py", line 428, in handle_one_request
+    method()
+  File "D:\APP\game\阿拉德英雄传Ver2.21\阿拉德英雄传\Work\train\web\server.py", line 302, in do_GET
+    return self.reply(self.server.detector.info())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\APP\game\阿拉德英雄传Ver2.21\阿拉德英雄传\Work\train\web\server.py", line 276, in reply
+    self.wfile.write(content)
+  File "D:\APP\miniconda\envs\yolo\Lib\socketserver.py", line 834, in write
+    self._sock.sendall(b)
+ConnectionAbortedError: [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+  File "D:\APP\miniconda\envs\yolo\Lib\socketserver.py", line 834, in write
+    self._sock.sendall(b)
+----------------------------------------ConnectionAbortedError: [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+
+----------------------------------------
+127.0.0.1 - - [01/Oct/2026 19:13:49] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:13:49] "POST /api/predict?filename=test.png&conf=0.25&imgsz=640 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:13:50] "POST /api/model HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:13:50] "POST /api/predict?filename=test2.png&conf=0.25&imgsz=640 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:13:50] "POST /api/model HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:13:50] "POST /api/predict?filename=test3.png&conf=0.25&imgsz=640 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:14:05] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:14:05] "GET /api/examples/0 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:14:05] "POST /api/predict HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 19:14:05] "POST /api/predict?conf=nan HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 19:14:05] "POST /api/predict?imgsz=777 HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 19:14:05] "POST /api/predict HTTP/1.1" 403 -
+127.0.0.1 - - [01/Oct/2026 19:14:05] "GET /api/results/../../train_config.json HTTP/1.1" 404 -
+127.0.0.1 - - [01/Oct/2026 19:14:07] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:14:07] "GET /app.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:14:07] "GET /favicon.svg HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:14:07] "GET /app.js HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:14:07] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:14:07] "GET /favicon.svg HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:14:07] "GET /api/examples/0 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:14:07] "GET /api/examples/3 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:14:07] "GET /api/examples/2 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:14:07] "GET /api/examples/1 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:14:08] "POST /api/predict?filename=%E4%B8%8A%E4%BC%A0%E7%A4%BA%E4%BE%8B.png&conf=0.25&iou=0.7&imgsz=640 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:14:08] "GET /api/results/e8c13dcf1a7544129707b57673dbf221/original.png HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:14:08] "GET /api/results/e8c13dcf1a7544129707b57673dbf221/result.json?download=1 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:14:09] "GET /api/results/e8c13dcf1a7544129707b57673dbf221/annotated.png?download=1 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:14:09] "GET /api/results/e8c13dcf1a7544129707b57673dbf221/original.png HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:14:09] "GET /api/results/e8c13dcf1a7544129707b57673dbf221/result.json?download=1 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:14:10] "POST /api/predict?filename=blank.png&conf=0.95&iou=0.7&imgsz=640 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:14:10] "GET /api/results/24aeaa1831d2412bb195b01749cf7f46/original.png HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:14:10] "GET /api/results/24aeaa1831d2412bb195b01749cf7f46/result.json?download=1 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:14:10] "GET /api/examples/1 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:23:13] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:23:13] "GET /app.js HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:23:13] "GET /app.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:23:13] "GET /favicon.svg HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:23:13] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:23:13] "GET /api/examples/3 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:23:13] "GET /api/examples/1 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:23:13] "GET /api/examples/2 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:23:13] "GET /api/examples/0 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:23:13] "GET /favicon.svg HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:23:13] "GET /app.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:23:29] "GET /api/examples/0 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:23:31] "POST /api/predict?filename=scene_022651.png&conf=0.25&iou=0.7&imgsz=640 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:23:31] "GET /api/results/ac2e705e92a642c4ab804f81dda56437/original.png HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:30:35] "POST /api/model HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:30:38] "POST /api/model HTTP/1.1" 200 -

@@ -1,0 +1,41 @@
+# 忽略Datas目录下的所有数据集文件
+Datas/*
+assets/*
+# 忽略code目录下的所有  数据集生产文件
+code/*
+# 忽略reports目录下的所有报告文件   
+reports/*
+
+
+
+
+# 图片
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.webp
+*.svg
+*.ico
+*.tif
+*.tiff
+*.heic
+*.avif
+*.raw
+
+# 视频
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.flv
+*.mkv
+*.webm
+*.m4v
+*.mpg
+*.mpeg
+*.3gp
+*.rmvb
+*.m2ts
+*.mts

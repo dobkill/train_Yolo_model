@@ -1,0 +1,14 @@
+{
+  "phase": "completed",
+  "pid": 104316,
+  "completed_at": "2026-10-01 18:17:10",
+  "elapsed_seconds": 5092.794928789139,
+  "best_weights": "D:\\APP\\game\\阿拉德英雄传Ver2.21\\阿拉德英雄传\\Work\\train\\runs\\named116_yolo11n\\weights\\best.pt",
+  "test_metrics": {
+    "metrics/precision(B)": 0.9507802445923852,
+    "metrics/recall(B)": 0.9198427430373355,
+    "metrics/mAP50(B)": 0.9622838280009683,
+    "metrics/mAP50-95(B)": 0.8576562131161615,
+    "fitness": 0.8576562131161615
+  }
+}

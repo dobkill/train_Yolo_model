@@ -1,0 +1,17 @@
+Loading model registry...
+Traceback (most recent call last):
+  File "D:\APP\game\阿拉德英雄传Ver2.21\阿拉德英雄传\Work\webui\web\server.py", line 378, in <module>
+    main()
+  File "D:\APP\game\阿拉德英雄传Ver2.21\阿拉德英雄传\Work\webui\web\server.py", line 370, in main
+    server.detector = Detector()
+                      ^^^^^^^^^^
+  File "D:\APP\game\阿拉德英雄传Ver2.21\阿拉德英雄传\Work\webui\web\server.py", line 78, in __init__
+    self.dataset_classes = (ROOT.parent / "dataset_named_1000/classes.txt").read_text(encoding="utf-8").splitlines()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\APP\miniconda\envs\yolo\Lib\pathlib.py", line 1058, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\APP\miniconda\envs\yolo\Lib\pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\APP\\game\\阿拉德英雄传Ver2.21\\阿拉德英雄传\\Work\\dataset_named_1000\\classes.txt'

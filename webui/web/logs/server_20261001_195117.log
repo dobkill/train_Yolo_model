@@ -1,0 +1,52 @@
+Loading model registry...
+READY http://127.0.0.1:8766 (Tesla V100-SXM2-16GB)
+127.0.0.1 - - [01/Oct/2026 19:51:26] "GET /api/health HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 62919)
+127.0.0.1 - - [01/Oct/2026 19:51:26] "GET /api/health HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 62929)
+127.0.0.1 - - [01/Oct/2026 19:51:26] "GET /api/health HTTP/1.1" 200 -
+Traceback (most recent call last):
+  File "D:\APP\miniconda\envs\yolo\Lib\socketserver.py", line 691, in process_request_thread
+    self.finish_request(request, client_address)
+  File "D:\APP\miniconda\envs\yolo\Lib\socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "D:\APP\miniconda\envs\yolo\Lib\socketserver.py", line 755, in __init__
+    self.handle()
+Traceback (most recent call last):
+  File "D:\APP\miniconda\envs\yolo\Lib\socketserver.py", line 691, in process_request_thread
+    self.finish_request(request, client_address)
+  File "D:\APP\miniconda\envs\yolo\Lib\socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "D:\APP\miniconda\envs\yolo\Lib\socketserver.py", line 755, in __init__
+    self.handle()
+  File "D:\APP\miniconda\envs\yolo\Lib\http\server.py", line 440, in handle
+    self.handle_one_request()
+  File "D:\APP\miniconda\envs\yolo\Lib\http\server.py", line 428, in handle_one_request
+    method()
+  File "D:\APP\game\阿拉德英雄传Ver2.21\阿拉德英雄传\Work\webui\web\server.py", line 318, in do_GET
+    return self.reply(self.server.detector.info())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\APP\game\阿拉德英雄传Ver2.21\阿拉德英雄传\Work\webui\web\server.py", line 292, in reply
+    self.wfile.write(content)
+  File "D:\APP\miniconda\envs\yolo\Lib\http\server.py", line 440, in handle
+    self.handle_one_request()
+  File "D:\APP\miniconda\envs\yolo\Lib\socketserver.py", line 834, in write
+    self._sock.sendall(b)
+ConnectionAbortedError: [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+----------------------------------------
+  File "D:\APP\miniconda\envs\yolo\Lib\http\server.py", line 428, in handle_one_request
+    method()
+  File "D:\APP\game\阿拉德英雄传Ver2.21\阿拉德英雄传\Work\webui\web\server.py", line 318, in do_GET
+    return self.reply(self.server.detector.info())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\APP\game\阿拉德英雄传Ver2.21\阿拉德英雄传\Work\webui\web\server.py", line 292, in reply
+    self.wfile.write(content)
+  File "D:\APP\miniconda\envs\yolo\Lib\socketserver.py", line 834, in write
+    self._sock.sendall(b)
+ConnectionAbortedError: [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+----------------------------------------
+127.0.0.1 - - [01/Oct/2026 19:51:45] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:51:45] "GET /api/examples/0 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 19:51:45] "POST /api/predict?filename=test.png HTTP/1.1" 200 -

@@ -1,0 +1,117 @@
+{
+  "id": "04e59111aa74470997e20b941bafb779",
+  "created_at": "2026-10-01T18:43:46",
+  "filename": "scene_023152.png",
+  "width": 640,
+  "height": 480,
+  "model": "YOLO11n",
+  "device": "Tesla V100-SXM2-16GB",
+  "weights_sha256": "9b1958b223a1460687a10e57a3d83059c845428ffebd96e56088bb472c033495",
+  "input_sha256": "97ae333733a3049637240d2d790c6422c6b013de8218cc565c076172327d8baf",
+  "bbox_type": "predicted_visible_bbox",
+  "parameters": {
+    "confidence": 0.25,
+    "iou": 0.7,
+    "imgsz": 640
+  },
+  "detections": [
+    {
+      "id": 1,
+      "class_id": 69,
+      "class_name": "蓝鱼人",
+      "confidence": 0.967682,
+      "bbox_xyxy": [
+        523.82,
+        201.53,
+        640,
+        328.69
+      ],
+      "color": "#9e7fc0"
+    },
+    {
+      "id": 2,
+      "class_id": 75,
+      "class_name": "野猪人战士",
+      "confidence": 0.966387,
+      "bbox_xyxy": [
+        35.81,
+        223.1,
+        156.84,
+        365.12
+      ],
+      "color": "#789146"
+    },
+    {
+      "id": 3,
+      "class_id": 35,
+      "class_name": "欧克瑟",
+      "confidence": 0.949933,
+      "bbox_xyxy": [
+        369.42,
+        308.88,
+        498.01,
+        423.76
+      ],
+      "color": "#a0b9be"
+    },
+    {
+      "id": 4,
+      "class_id": 32,
+      "class_name": "格日勒图",
+      "confidence": 0.895764,
+      "bbox_xyxy": [
+        32.19,
+        330.77,
+        89.18,
+        398.93
+      ],
+      "color": "#b360ab"
+    },
+    {
+      "id": 5,
+      "class_id": 103,
+      "class_name": "rokosi",
+      "confidence": 0.894072,
+      "bbox_xyxy": [
+        32.38,
+        271.89,
+        109.35,
+        376.57
+      ],
+      "color": "#9c45c2"
+    },
+    {
+      "id": 6,
+      "class_id": 106,
+      "class_name": "seelen_b",
+      "confidence": 0.583231,
+      "bbox_xyxy": [
+        175.87,
+        338.48,
+        258.69,
+        427.95
+      ],
+      "color": "#899ed5"
+    },
+    {
+      "id": 7,
+      "class_id": 107,
+      "class_name": "seelen_f",
+      "confidence": 0.566203,
+      "bbox_xyxy": [
+        175.88,
+        338.32,
+        258.8,
+        427.94
+      ],
+      "color": "#b851a6"
+    }
+  ],
+  "count": 7,
+  "class_count": 7,
+  "inference_ms": 24.52,
+  "total_ms": 137.4,
+  "original_url": "/api/results/04e59111aa74470997e20b941bafb779/original.png",
+  "annotated_url": "/api/results/04e59111aa74470997e20b941bafb779/annotated.png",
+  "json_url": "/api/results/04e59111aa74470997e20b941bafb779/result.json"
+}

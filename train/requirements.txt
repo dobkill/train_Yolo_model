@@ -1,0 +1,2 @@
+# Keep the existing CUDA 12.6 PyTorch build, which supports V100 / sm_70.
+ultralytics==8.4.170

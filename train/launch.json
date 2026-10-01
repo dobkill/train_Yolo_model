@@ -1,0 +1,12 @@
+{
+  "pid": 104316,
+  "log": "D:\\APP\\game\\阿拉德英雄传Ver2.21\\阿拉德英雄传\\Work\\train\\logs\\train_20261001_165212.log",
+  "command": [
+    "D:\\APP\\miniconda\\envs\\yolo\\python.exe",
+    "-u",
+    "D:\\APP\\game\\阿拉德英雄传Ver2.21\\阿拉德英雄传\\Work\\train\\train.py",
+    "--resume",
+    "runs/named116_yolo11n/weights/last.pt"
+  ],
+  "started": "20261001_165212"
+}
