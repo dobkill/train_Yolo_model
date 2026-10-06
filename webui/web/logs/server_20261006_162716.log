@@ -1,0 +1,70 @@
+Loading model registry...
+READY http://127.0.0.1:8766 (Tesla V100-SXM2-16GB)
+127.0.0.1 - - [06/Oct/2026 16:30:39] "GET /api/health HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 59131)
+127.0.0.1 - - [06/Oct/2026 16:30:39] "GET /api/health HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 59138)
+Traceback (most recent call last):
+  File "D:\APP\miniconda\envs\yolo\Lib\socketserver.py", line 691, in process_request_thread
+    self.finish_request(request, client_address)
+  File "D:\APP\miniconda\envs\yolo\Lib\socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+Traceback (most recent call last):
+  File "D:\APP\miniconda\envs\yolo\Lib\socketserver.py", line 755, in __init__
+    self.handle()
+  File "D:\APP\miniconda\envs\yolo\Lib\socketserver.py", line 691, in process_request_thread
+    self.finish_request(request, client_address)
+  File "D:\APP\miniconda\envs\yolo\Lib\http\server.py", line 440, in handle
+    self.handle_one_request()
+  File "D:\APP\miniconda\envs\yolo\Lib\http\server.py", line 428, in handle_one_request
+    method()
+  File "D:\APP\阿拉德英雄传\Work\webui\web\server.py", line 318, in do_GET
+    return self.reply(self.server.detector.info())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\APP\阿拉德英雄传\Work\webui\web\server.py", line 290, in reply
+    self.end_headers()
+  File "D:\APP\miniconda\envs\yolo\Lib\http\server.py", line 542, in end_headers
+    self.flush_headers()
+  File "D:\APP\miniconda\envs\yolo\Lib\socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "D:\APP\miniconda\envs\yolo\Lib\socketserver.py", line 755, in __init__
+    self.handle()
+  File "D:\APP\miniconda\envs\yolo\Lib\http\server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "D:\APP\miniconda\envs\yolo\Lib\socketserver.py", line 834, in write
+    self._sock.sendall(b)
+ConnectionAbortedError: [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+----------------------------------------
+  File "D:\APP\miniconda\envs\yolo\Lib\http\server.py", line 440, in handle
+    self.handle_one_request()
+  File "D:\APP\miniconda\envs\yolo\Lib\http\server.py", line 428, in handle_one_request
+    method()
+  File "D:\APP\阿拉德英雄传\Work\webui\web\server.py", line 318, in do_GET
+    return self.reply(self.server.detector.info())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\APP\阿拉德英雄传\Work\webui\web\server.py", line 290, in reply
+    self.end_headers()
+  File "D:\APP\miniconda\envs\yolo\Lib\http\server.py", line 542, in end_headers
+    self.flush_headers()
+  File "D:\APP\miniconda\envs\yolo\Lib\http\server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "D:\APP\miniconda\envs\yolo\Lib\socketserver.py", line 834, in write
+    self._sock.sendall(b)
+ConnectionAbortedError: [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+----------------------------------------
+127.0.0.1 - - [06/Oct/2026 16:32:06] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 16:32:07] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 16:32:07] "GET /app.css HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 16:32:07] "GET /app.js HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 16:32:07] "GET /favicon.svg HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 16:32:07] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 16:32:07] "GET /favicon.svg HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 16:32:07] "GET /api/examples/3 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 16:32:07] "GET /api/examples/1 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 16:32:07] "GET /api/examples/2 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 16:32:07] "GET /api/examples/0 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 16:32:23] "GET /api/examples/0 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 16:32:25] "POST /api/predict?filename=scene_022651.png&conf=0.25&iou=0.7&imgsz=640 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 16:32:25] "GET /api/results/fe8fa87427644e6ea4f9d4c5d84aa013/original.png HTTP/1.1" 200 -
