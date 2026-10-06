@@ -1,8 +1,8 @@
 {
   "settings_version": "0.0.8",
-  "datasets_dir": "D:\\APP\\game\\\u963f\u62c9\u5fb7\u82f1\u96c4\u4f20Ver2.21\\\u963f\u62c9\u5fb7\u82f1\u96c4\u4f20\\Work",
-  "weights_dir": "D:\\APP\\game\\\u963f\u62c9\u5fb7\u82f1\u96c4\u4f20Ver2.21\\\u963f\u62c9\u5fb7\u82f1\u96c4\u4f20\\Work\\train\\pretrained",
-  "runs_dir": "D:\\APP\\game\\\u963f\u62c9\u5fb7\u82f1\u96c4\u4f20Ver2.21\\\u963f\u62c9\u5fb7\u82f1\u96c4\u4f20\\Work\\train\\runs",
+  "datasets_dir": "D:\\APP\\\u963f\u62c9\u5fb7\u82f1\u96c4\u4f20\\Work",
+  "weights_dir": "D:\\APP\\\u963f\u62c9\u5fb7\u82f1\u96c4\u4f20\\Work\\train\\pretrained",
+  "runs_dir": "D:\\APP\\\u963f\u62c9\u5fb7\u82f1\u96c4\u4f20\\Work\\train\\runs",
   "uuid": "9b34426bddd37ef7842ed7e735ce2d2e246f4740bff5f3e7b00dde4c94a0cde6",
   "sync": false,
   "api_key": "",
