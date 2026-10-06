@@ -1,0 +1,136 @@
+{
+  "id": "241a67791b264a639d4a1eaccb2a76ad",
+  "created_at": "2026-10-06T20:29:59+08:00",
+  "filename": "停止测试.avi",
+  "file_id": "c6fe0901499ffefbe2bea1d8af0e910e",
+  "model_key": "8f4f320a99464c858f3d6211d53fb842",
+  "model": "本地检测模型",
+  "task": "detect",
+  "kind": "video",
+  "parameters": {
+    "conf": 0.35,
+    "iou": 0.5,
+    "imgsz": 640,
+    "device": "auto",
+    "stride": 1,
+    "show_names": true,
+    "show_conf": true,
+    "show_boxes": true,
+    "show_masks": false
+  },
+  "original_url": "/api/results/241a67791b264a639d4a1eaccb2a76ad/original.png",
+  "annotated_url": "/api/results/241a67791b264a639d4a1eaccb2a76ad/annotated.png",
+  "json_url": "/api/results/241a67791b264a639d4a1eaccb2a76ad/result.json",
+  "total_frames": 180,
+  "fps": 12.0,
+  "stride": 1,
+  "processed_frames": 1,
+  "output_frames": 1,
+  "status": "cancelled",
+  "phase": "ready",
+  "playback_ready": true,
+  "playback_version": 2,
+  "source_signature": {
+    "path": "d:\\app\\阿拉德英雄传\\work\\webui\\web\\qa\\fixtures\\停止测试.avi",
+    "size": 18175586,
+    "mtime_ns": 1791289774502345700
+  },
+  "model_signature": {
+    "path": "d:\\app\\阿拉德英雄传\\work\\train\\runs\\named116_yolo11n\\weights\\best.pt",
+    "size": 5628433,
+    "mtime_ns": 1790849750118946900
+  },
+  "video_url": "/api/results/241a67791b264a639d4a1eaccb2a76ad/annotated.mp4",
+  "original_video_url": "/api/results/241a67791b264a639d4a1eaccb2a76ad/original.mp4",
+  "detections": [
+    {
+      "id": 1,
+      "class_id": 58,
+      "class_name": "盗尸者_2",
+      "confidence": 0.960569,
+      "bbox_xyxy": [
+        245.5,
+        331.15,
+        312.59,
+        449.95
+      ],
+      "color": "#e2959a",
+      "polygon": []
+    },
+    {
+      "id": 2,
+      "class_id": 2,
+      "class_name": "乌拉塔",
+      "confidence": 0.946032,
+      "bbox_xyxy": [
+        111.29,
+        240.71,
+        288.74,
+        433.65
+      ],
+      "color": "#b87e74",
+      "polygon": []
+    },
+    {
+      "id": 3,
+      "class_id": 67,
+      "class_name": "蓝翼龙",
+      "confidence": 0.929857,
+      "bbox_xyxy": [
+        107.27,
+        352.36,
+        173.62,
+        440.33
+      ],
+      "color": "#5e9c3d",
+      "polygon": []
+    },
+    {
+      "id": 4,
+      "class_id": 87,
+      "class_name": "鱼人",
+      "confidence": 0.815738,
+      "bbox_xyxy": [
+        522.2,
+        344.42,
+        629.24,
+        458.25
+      ],
+      "color": "#6d9765",
+      "polygon": []
+    },
+    {
+      "id": 5,
+      "class_id": 82,
+      "class_name": "阿斯特罗斯",
+      "confidence": 0.619003,
+      "bbox_xyxy": [
+        519.0,
+        344.8,
+        629.12,
+        458.15
+      ],
+      "color": "#3b6a5b",
+      "polygon": []
+    }
+  ],
+  "count": 5,
+  "class_count": 5,
+  "average_confidence": 0.8542,
+  "width": 640,
+  "height": 480,
+  "timing_ms": {
+    "inference_pure": 29.08,
+    "preprocess": 1.37,
+    "postprocess": 3.2,
+    "total": 37.04
+  },
+  "weights_sha256": "9b1958b223a1460687a10e57a3d83059c845428ffebd96e56088bb472c033495",
+  "device": "0",
+  "frame_index": 0,
+  "time_seconds": 0.0,
+  "detections_total": 5,
+  "mean_inference_ms": 29.08,
+  "elapsed_seconds": 0.15,
+  "duration_seconds": 0.083333
+}

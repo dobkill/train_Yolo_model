@@ -1,67 +1,90 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>阿拉德 · 图片目标识别</title>
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/app.css">
-  <script src="/app.js" defer></script>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>模型测试工作台</title><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/app.css"><script src="/app.js" defer></script>
 </head>
 <body>
-  <aside class="sidebar">
-    <a class="brand" href="/" aria-label="阿拉德图片识别首页"><img src="/favicon.svg" alt=""><span>阿拉德<span class="brand-sub">VISION STUDIO</span></span></a>
-    <div class="nav-active"><span class="crosshair">⌖</span> 图片目标识别 <span class="nav-dot"></span></div>
-    <div class="queue-heading"><span>图片队列</span><span id="queue-count">0</span></div>
-    <div id="queue" class="queue"><p class="queue-empty">把想识别的画面<br>添加到这里。</p></div>
-    <button class="add-more" id="add-more">＋ 添加图片</button>
-    <button class="add-folder" id="add-folder">▣ 添加文件夹</button>
-    <div class="model-card"><div class="model-label"><i id="model-dot"></i><span id="model-state">正在连接模型</span></div><strong id="model-name">—</strong><p id="device-name">本地模型</p><div class="model-divider"></div><small>图片只在本机处理<br>关闭网页后服务仍可使用</small></div>
-    <div class="sidebar-foot">ARAD HEROES <span>01 / DETECT</span></div>
-  </aside>
-  <main>
-    <header class="page-header"><div><div class="eyebrow">图像工作台 <span>/</span> OBJECT DETECTION</div><h1>图片目标识别<span class="heading-dot">.</span></h1><p>选择游戏画面，让模型找出角色与怪物。</p></div><button class="button primary header-upload" id="choose-top"><span>＋</span> 选择图片</button></header>
-    <section class="summary-strip"><span class="ready-pill" id="ready-pill"><i></i><span>连接中</span></span><span id="summary-model">模型 —</span><span id="summary-classes">— 类</span><span class="score" id="score-wrap" hidden>合成测试集 mAP50 <b id="test-score">—</b><span class="info" title="此指标来自合成测试集，不代表真实游戏截图表现。">i</span></span></section>
-    <div class="workspace">
-      <section class="preview-panel">
-        <div class="panel-heading"><div class="panel-title"><span class="step-number">01</span><h2>画面预览</h2></div><div class="view-switch" role="group" aria-label="预览模式"><button id="view-boxes" class="active" aria-pressed="true">检测结果</button><button id="view-original" aria-pressed="false">原图</button></div></div>
-        <div id="dropzone" class="image-stage" tabindex="0" aria-label="图片预览区，可拖入图片或文件夹，或按回车选择">
-          <div id="empty-state" class="empty-state"><div class="upload-symbol"><svg width="42" height="42" viewBox="0 0 42 42" fill="none" aria-hidden="true"><rect x="5" y="6" width="32" height="30" rx="7" stroke="currentColor" stroke-width="1.8"/><path d="m6 29 10-10 8 8 5-5 7 7" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="29" cy="14" r="3" fill="currentColor"/></svg><span>＋</span></div><h3>把游戏画面拖到这里</h3><p>支持一次拖入整个文件夹，或从电脑中选择图片</p><button id="choose-center" class="button primary">选择图片 <span>↗</span></button><small>PNG / JPG / WEBP / BMP · 每张不超过 25 MB</small></div>
-          <canvas id="canvas" hidden aria-label="识别目标及检测框"></canvas>
-          <div class="drag-overlay">松开鼠标，添加图片</div>
-          <div id="processing" class="processing" hidden><span class="spinner"></span><strong>正在识别画面…</strong><span>本地模型处理中</span></div>
+  <svg class="icon-defs" aria-hidden="true"><defs>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5M3 16l9 5 9-5"/></symbol>
+    <symbol id="i-data" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v7c0 4 16 4 16 0V5M4 12v7c0 4 16 4 16 0v-7"/></symbol>
+    <symbol id="i-record" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2h6v2M9 10h6M9 14h6M9 18h4"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="16" cy="8" r="2"/><path d="m3 17 6-7 5 6 3-3 4 4"/></symbol>
+    <symbol id="i-video" viewBox="0 0 24 24"><rect x="2" y="5" width="14" height="14" rx="3"/><path d="m16 9 6-3v12l-6-3"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m7 4 14 8-14 8V4Z"/></symbol>
+    <symbol id="i-stop" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="m14 2-9 12h6l-1 8 9-12h-6l1-8Z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="7"/><path d="m15 15 6 6"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7v1"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M5 21V13M12 21V7M19 21V3"/></symbol>
+  </defs></svg>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="模型测试工作台首页"><svg class="brand-mark" width="42" height="42" viewBox="0 0 42 42" aria-hidden="true"><path d="m21 2 17 9-17 9-17-9Z" fill="#3988ff"/><path d="M4 14 19 22v18L4 32Z" fill="#1268fa"/><path d="m23 22 15-8v18l-15 8Z" fill="#247aff"/></svg><div><h1>模型测试工作台</h1><span>本地 AI 模型测试与效果验证</span></div></a>
+    <nav aria-label="记录管理"><button id="models-library"><svg class="icon"><use href="#i-layers"/></svg>模型库</button><button id="datasets-library"><svg class="icon"><use href="#i-data"/></svg>数据集库</button><button id="history-library"><svg class="icon"><use href="#i-record"/></svg>测试记录</button><span class="connection" id="connection"><i></i><span>SQLite 本地记录 · 连接中</span></span></nav>
+  </header>
+  <div class="toolbar">
+    <div class="toolbar-group"><strong>任务类型：</strong><div class="segmented" id="task-switch" role="group" aria-label="任务类型"><button data-task="detect" class="active" aria-pressed="true">物体检测</button><button data-task="segment" aria-pressed="false">图像分割</button></div></div>
+    <div class="toolbar-group"><strong>模式：</strong><div class="segmented" id="mode-switch" role="group" aria-label="测试模式"><button data-mode="preview" class="active" aria-pressed="true">效果预览</button><button data-mode="evaluate" aria-pressed="false">定量评测</button></div></div>
+  </div>
+  <div id="invalid-banner" class="invalid-banner" hidden><span id="invalid-text"></span><button id="inspect-invalid">查看记录</button><button id="recheck-top">重新检查</button></div>
+  <main class="workspace">
+    <aside class="panel catalog-panel">
+      <div class="panel-heading"><h2><svg class="icon blue"><use href="#i-data"/></svg>模型与数据</h2></div>
+      <div class="catalog-fields">
+        <div class="field-heading"><label for="model-select">模型选择</label><button class="small blue-outline" id="register-model">＋ 登记模型</button></div>
+        <select id="model-select" aria-label="模型选择"><option value="">请选择模型</option></select>
+        <div class="metadata" id="model-meta"><p>登记本地模型后即可反复使用</p></div>
+        <div class="field-heading dataset-heading"><label for="dataset-select">数据集选择</label><button class="small blue-outline" id="register-dataset">＋ 登记数据集</button></div>
+        <select id="dataset-select" aria-label="数据集选择"><option value="">请选择数据集</option></select>
+        <div class="metadata" id="dataset-meta"><p>支持图片／视频文件夹与数据集 YAML</p></div>
+        <div class="field-heading data-kind"><strong>数据类型</strong><div class="segmented" id="kind-switch" role="group" aria-label="数据类型"><button data-kind="image" class="active" aria-pressed="true">图片</button><button data-kind="video" aria-pressed="false">视频</button></div></div>
+        <label class="search-field"><svg class="icon"><use href="#i-search"/></svg><input id="file-search" placeholder="搜索文件…" aria-label="搜索文件"></label>
+      </div>
+      <div id="file-list" class="file-list"><div class="list-empty">选择数据集，浏览测试文件</div></div>
+      <button id="load-more" class="load-more" hidden>加载更多</button>
+      <div class="catalog-foot"><span id="file-total">0 个文件</span><button id="refresh-files">↻ 刷新数据</button></div>
+    </aside>
+    <section class="panel preview-panel">
+      <div class="panel-heading"><h2><svg class="icon blue"><use href="#i-image"/></svg>画面预览</h2><div id="view-switch" class="segmented compact" role="group" aria-label="画面预览模式"><button data-view="original" aria-pressed="false">原图</button><button data-view="overlay" class="active" aria-pressed="true">结果叠加</button><button data-view="compare" aria-pressed="false">左右对比</button></div></div>
+      <div class="image-stage" id="stage">
+        <div id="empty-state" class="empty-state"><span class="empty-icon"><svg class="icon"><use href="#i-image"/></svg></span><h3>从一个模型、一组数据开始</h3><p>登记本地路径，选择文件，查看模型的实际效果</p><button id="register-center" class="primary">＋ 登记数据集</button><small>图片与视频在本机处理</small></div>
+        <canvas id="canvas" hidden aria-label="模型测试结果画面"></canvas>
+        <div id="video-player" class="video-player" hidden><video id="video-reference" muted preload="auto" hidden aria-label="原始视频对比"></video><video id="video" controls playsinline preload="auto" aria-label="预计算视频播放"></video></div>
+        <div id="processing" class="processing" hidden><span class="spinner"></span><span id="processing-text">正在测试…</span></div>
+      </div>
+      <div class="video-timeline" id="video-timeline" hidden><button id="play-frames" title="播放预计算视频" aria-label="播放预计算视频">▶</button><input id="frame-seek" type="range" min="0" max="1" value="0" aria-label="选择视频帧"><span id="frame-label">第 1 帧</span></div>
+      <div class="preview-navigation"><button id="previous" aria-label="上一个文件">〈 <span>上一张</span></button><span id="file-position">0 / 0</span><button id="next" aria-label="下一个文件"><span>下一张</span> 〉</button><label class="zoom"><svg class="icon"><use href="#i-search"/></svg><select id="zoom" aria-label="画面缩放"><option value="fit">缩放 · 自适应</option><option value="1">100%</option><option value="1.5">150%</option><option value="2">200%</option></select></label></div>
+      <div class="file-caption" id="file-caption">等待选择测试文件</div>
+      <div class="test-actions"><button class="primary" id="test-current" disabled><svg class="icon"><use href="#i-play"/></svg><span>测试当前图片</span></button><button id="test-batch" disabled><svg class="icon"><use href="#i-layers"/></svg><span>批量测试</span></button><button class="danger" id="stop" disabled><svg class="icon"><use href="#i-stop"/></svg>停止</button></div>
+      <div class="progress-row"><span id="progress-label">进度：待开始</span><progress id="progress" value="0" max="100"></progress><span id="progress-value">0%</span></div>
+      <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+      <div id="evaluation-help" class="evaluation-help" hidden><svg class="icon"><use href="#i-info"/></svg><span>登记包含图片、标注及类别定义的 YOLO YAML，计算 Precision、Recall 和 mAP。视频请使用效果预览。</span></div>
+    </section>
+    <aside class="right-column">
+      <section class="panel settings-panel">
+        <div class="tab-heading" role="tablist"><button id="params-tab" class="active" role="tab" aria-selected="true" aria-controls="parameters">推理参数</button><button id="result-tab" role="tab" aria-selected="false" aria-controls="result-detail">当前结果</button></div>
+        <div id="parameters" class="parameters" role="tabpanel" aria-labelledby="params-tab">
+          <label class="param-row" for="device"><span>运行设备</span><select id="device"><option value="auto">自动选择（推荐）</option><option value="cpu">CPU</option><option value="0">CUDA · GPU 0</option></select></label>
+          <label class="param-row" for="imgsz"><span>输入尺寸</span><select id="imgsz"><option value="320">320</option><option value="640" selected>640</option><option value="960">960</option><option value="1280">1280</option></select></label>
+          <div class="param-row slider-row"><label for="confidence">置信度阈值</label><div class="slider-with-scale"><input id="confidence" type="range" min="0" max="1" step="0.01" value="0.35"><div><span>0</span><span>1</span></div></div><input id="confidence-number" type="number" min="0" max="1" step="0.01" value="0.35" aria-label="置信度阈值数值"></div>
+          <div class="param-row slider-row"><label for="iou">IoU 阈值</label><div class="slider-with-scale"><input id="iou" type="range" min="0" max="1" step="0.01" value="0.50"><div><span>0</span><span>1</span></div></div><input id="iou-number" type="number" min="0" max="1" step="0.01" value="0.50" aria-label="IoU 阈值数值"></div>
+          <label class="param-row" id="stride-row" for="stride" hidden><span>视频帧间隔</span><select id="stride"><option value="1">1 · 测试每帧</option><option value="2">2 · 每两帧</option><option value="5">5 · 每五帧</option><option value="10">10 · 每十帧</option></select></label>
+          <h3 class="display-heading">显示设置</h3><div class="checkbox-grid"><label><input id="show-names" type="checkbox" checked>显示类别名称</label><label><input id="show-conf" type="checkbox" checked>显示置信度</label><label><input id="show-boxes" type="checkbox" checked>显示检测框</label><label><input id="show-masks" type="checkbox">显示掩码</label></div>
         </div>
-        <div class="image-footer"><span id="file-info">等待选择图片</span><span id="preview-hint">拖拽 · 选择 · 识别</span></div>
-        <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
-        <div class="examples"><div class="examples-heading"><span>先试一张示例</span><small>来自已生成的测试场景</small></div><div id="examples" class="example-grid"></div></div>
+        <div id="result-detail" role="tabpanel" aria-labelledby="result-tab" hidden><p class="muted">测试后查看目标位置与性能数据</p></div>
       </section>
-      <aside class="controls-panel">
-        <div class="panel-heading"><div class="panel-title"><span class="step-number">02</span><h2>识别设置</h2></div><span class="tiny-tag">DETECTION</span></div>
-        <div class="settings">
-          <label class="slider-label" for="model-select">识别模型 <span class="model-loading" id="model-loading" hidden>切换中…</span></label>
-          <select id="model-select" aria-label="选择识别模型"><option value="">加载中…</option></select>
-          <p class="field-help" id="model-help">—</p>
-          <label class="slider-label" for="confidence">置信度阈值 <output id="confidence-value">25%</output></label><input id="confidence" type="range" min="1" max="95" value="25"><p class="field-help">调高可减少误检，调低可找回遗漏目标。</p>
-          <details class="advanced"><summary>更多设置 <span>＋</span></summary><label class="slider-label" for="iou">重叠框抑制 <output id="iou-value">0.70</output></label><input id="iou" type="range" min="10" max="95" value="70"><label class="size-label" for="imgsz">识别尺寸</label><select id="imgsz"><option value="640">640 · 标准</option><option value="960">960 · 更细致</option><option value="1280">1280 · 大图 / 小目标</option></select><p class="field-help">更大的尺寸会增加识别用时。</p></details>
-          <button id="detect" class="button primary detect-button" disabled><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6 3H3v3m11-3h3v3M3 14v3h3m11-3v3h-3" stroke="currentColor" stroke-width="1.8"/><circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.8"/></svg><span>开始识别</span></button>
-        </div>
-        <div class="results-heading"><h2>识别结果 <span id="result-badge">0</span></h2><span id="result-time">—</span></div>
-        <div class="result-stats"><div><strong id="target-count">—</strong><span>检测目标</span></div><div><strong id="class-count">—</strong><span>目标类别</span></div><div><strong id="infer-time">—</strong><span>纯推理耗时</span></div></div>
-        <div class="perf-panel" id="perf-panel" hidden>
-          <div class="perf-row"><span class="perf-label">预处理</span><span class="perf-value" id="perf-pre">—</span></div>
-          <div class="perf-row"><span class="perf-label">模型推理</span><span class="perf-value strong" id="perf-infer">—</span></div>
-          <div class="perf-row"><span class="perf-label">后处理</span><span class="perf-value" id="perf-post">—</span></div>
-          <div class="perf-row"><span class="perf-label">绘制标注</span><span class="perf-value" id="perf-draw">—</span></div>
-          <div class="perf-row"><span class="perf-label">端到端</span><span class="perf-value" id="perf-total">—</span></div>
-          <div class="perf-row gpu" id="gpu-row" hidden><span class="perf-label">GPU 利用率</span><span class="perf-value" id="gpu-util">—</span></div>
-          <div class="perf-row gpu" id="gpu-mem-row" hidden><span class="perf-label">显存占用</span><span class="perf-value" id="gpu-mem">—</span></div>
-        </div>
-        <div class="filter-wrap"><label for="class-filter" class="sr-only">筛选识别类别</label><select id="class-filter" disabled><option value="all">全部类别</option></select></div>
-        <div id="result-list" class="result-list"><div class="result-empty"><span>⌖</span><p>目标会出现在这里</p><small>识别后查看类别、置信度与位置</small></div></div>
-        <div class="downloads"><a id="download-image" class="button secondary disabled" aria-disabled="true" title="下载包含所有检测框的 PNG 图片">↓ 标框图片</a><a id="download-json" class="button secondary disabled" aria-disabled="true">↓ 结果 JSON</a></div>
-      </aside>
-    </div>
-    <footer class="page-footer"><span><i></i> 本地推理 · 图片无需上传到云端</span><span>类别名称沿用游戏资源；真实游戏画面效果需另行验证。</span></footer>
+      <section class="panel summary-panel"><div class="panel-heading"><h2><svg class="icon blue"><use href="#i-target"/></svg>当前结果摘要</h2></div>
+        <div class="stat-grid"><div class="stat"><span><svg class="icon blue"><use href="#i-target"/></svg>目标数</span><strong id="target-count">—</strong></div><div class="stat"><span><svg class="icon cyan"><use href="#i-chart"/></svg>平均置信度</span><strong id="average-conf">—</strong></div><div class="stat"><span><svg class="icon orange"><use href="#i-bolt"/></svg>单帧推理</span><strong id="infer-time">—</strong></div></div>
+        <div class="summary-subhead"><h3>类别统计</h3><span id="class-count">—</span></div><div class="table-scroll"><table><thead><tr><th>类别</th><th>数量</th><th>平均置信度</th></tr></thead><tbody id="class-stats"><tr><td colspan="3" class="table-empty">暂无测试结果</td></tr></tbody></table></div>
+        <div id="video-summary" class="video-summary" hidden></div><div id="metrics-summary" class="metrics-summary" hidden></div>
+        <div class="downloads"><a id="download-image" aria-disabled="true" class="disabled">↓ 结果图片</a><a id="download-json" aria-disabled="true" class="disabled">↓ 结果 JSON</a><a id="download-video" hidden>↓ 结果视频</a></div>
+      </section>
+    </aside>
   </main>
-  <input id="file-input" type="file" accept="image/png,image/jpeg,image/webp,image/bmp,.bmp" multiple hidden>
-  <input id="folder-input" type="file" webkitdirectory directory multiple hidden>
-</body>
-</html>
+  <footer class="footer"><span><svg class="icon blue"><use href="#i-info"/></svg><span id="last-selection">上次选择：—</span><i></i><span id="last-test">最近测试时间：—</span></span><span>本地模型测试工具 <i></i> YOLO / ONNX <i></i> SQLite 本地记录</span></footer>
+  <dialog id="register-dialog"><form id="register-form"><div class="dialog-heading"><div><span class="eyebrow">LOCAL LIBRARY</span><h2 id="register-title">登记模型</h2></div><button type="button" class="close-dialog" aria-label="关闭">×</button></div><p id="register-description" class="muted"></p><label class="form-label" for="entry-name">名称<input id="entry-name" placeholder="留空则使用文件名称" maxlength="150"></label><label class="form-label" id="entry-task-label" for="entry-task">模型任务<select id="entry-task"><option value="detect">物体检测</option><option value="segment">图像分割</option></select></label><label class="form-label" for="entry-path">本地完整路径<input id="entry-path" placeholder="D:\Models\best.pt" required></label><div class="browse-actions" id="model-browse"><button type="button" data-pick="model">浏览模型文件…</button></div><div class="browse-actions" id="dataset-browse" hidden><button type="button" data-pick="folder">选择文件夹…</button><button type="button" data-pick="yaml">选择 YAML…</button><button type="button" data-pick="media">选择单个文件…</button></div><p id="form-error" class="form-error" role="alert" hidden></p><div class="dialog-actions"><button type="button" class="close-dialog">取消</button><button type="submit" class="primary" id="save-entry">保存登记</button></div></form></dialog>
+  <dialog id="library-dialog" class="wide-dialog"><div class="dialog-heading"><div><span class="eyebrow">LOCAL LIBRARY</span><h2 id="library-title">模型库</h2></div><button class="close-dialog" aria-label="关闭">×</button></div><p class="muted" id="library-help"></p><div class="library-actions"><button id="library-add" class="blue-outline">＋ 新增登记</button><button id="library-recheck">↻ 重新检查路径</button></div><div id="library-content"></div></dialog>
+  <dialog id="history-dialog" class="wide-dialog"><div class="dialog-heading"><div><span class="eyebrow">TEST HISTORY</span><h2>测试记录</h2></div><button class="close-dialog" aria-label="关闭">×</button></div><p class="muted">记录保存在本地 SQLite，可查看参数、结果及评测指标。</p><div id="history-content"></div></dialog>
+</body></html>

@@ -1,0 +1,95 @@
+{
+  "id": "da2795d864e24945be4711d3d8513bfb",
+  "created_at": "2026-10-06T20:27:11+08:00",
+  "filename": "scene_022651.png",
+  "file_id": "bb2791aac135b17411cb02e67b25e5e2",
+  "model_key": "8f4f320a99464c858f3d6211d53fb842",
+  "model": "本地检测模型",
+  "task": "detect",
+  "kind": "image",
+  "parameters": {
+    "conf": 0.35,
+    "iou": 0.5,
+    "imgsz": 640,
+    "device": "auto",
+    "stride": 1,
+    "show_names": true,
+    "show_conf": true,
+    "show_boxes": true,
+    "show_masks": true
+  },
+  "original_url": "/api/results/da2795d864e24945be4711d3d8513bfb/original.png",
+  "annotated_url": "/api/results/da2795d864e24945be4711d3d8513bfb/annotated.png",
+  "json_url": "/api/results/da2795d864e24945be4711d3d8513bfb/result.json",
+  "detections": [
+    {
+      "id": 1,
+      "class_id": 58,
+      "class_name": "盗尸者_2",
+      "confidence": 0.970065,
+      "bbox_xyxy": [
+        245.64,
+        330.38,
+        312.29,
+        449.48
+      ],
+      "color": "#e2959a",
+      "polygon": []
+    },
+    {
+      "id": 2,
+      "class_id": 2,
+      "class_name": "乌拉塔",
+      "confidence": 0.954982,
+      "bbox_xyxy": [
+        110.77,
+        240.68,
+        287.53,
+        433.14
+      ],
+      "color": "#b87e74",
+      "polygon": []
+    },
+    {
+      "id": 3,
+      "class_id": 67,
+      "class_name": "蓝翼龙",
+      "confidence": 0.939314,
+      "bbox_xyxy": [
+        107.05,
+        353.22,
+        172.99,
+        440.23
+      ],
+      "color": "#5e9c3d",
+      "polygon": []
+    },
+    {
+      "id": 4,
+      "class_id": 87,
+      "class_name": "鱼人",
+      "confidence": 0.889685,
+      "bbox_xyxy": [
+        523.15,
+        344.19,
+        629.24,
+        458.04
+      ],
+      "color": "#6d9765",
+      "polygon": []
+    }
+  ],
+  "count": 4,
+  "class_count": 4,
+  "average_confidence": 0.9385,
+  "width": 640,
+  "height": 480,
+  "timing_ms": {
+    "inference_pure": 23.19,
+    "preprocess": 78.03,
+    "postprocess": 18.25,
+    "total": 3800.3
+  },
+  "weights_sha256": "9b1958b223a1460687a10e57a3d83059c845428ffebd96e56088bb472c033495",
+  "device": "0"
+}

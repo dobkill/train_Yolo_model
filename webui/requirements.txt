@@ -1,0 +1,9 @@
+# Install a PyTorch build for your device first, then install these web dependencies.
+ultralytics==8.4.170
+Pillow>=10
+numpy>=1.26
+opencv-python>=4.8
+PyYAML>=6
+onnx>=1.12,<2
+onnxruntime>=1.16,<2
+imageio-ffmpeg>=0.5

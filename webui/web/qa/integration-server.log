@@ -1,0 +1,147 @@
+Checking SQLite model/dataset catalog...
+READY http://127.0.0.1:64743 / SQLite / 0 invalid records
+127.0.0.1 - - [06/Oct/2026 20:29:35] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:35] "POST /api/models HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:35] "POST /api/models HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:35] "POST /api/datasets HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:35] "GET /api/datasets/5a7b4ddc0bef4a35ae0cb9b7f9377863/files?model_id=8f4f320a99464c858f3d6211d53fb842 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:35] "GET /api/preview/bb2791aac135b17411cb02e67b25e5e2 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:35] "POST /api/jobs HTTP/1.1" 202 -
+127.0.0.1 - - [06/Oct/2026 20:29:35] "GET /api/jobs/921b90b0d8244168b9d63effa1467a31 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:35] "GET /api/jobs/921b90b0d8244168b9d63effa1467a31 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:36] "GET /api/jobs/921b90b0d8244168b9d63effa1467a31 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:36] "GET /api/jobs/921b90b0d8244168b9d63effa1467a31 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:36] "GET /api/jobs/921b90b0d8244168b9d63effa1467a31 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:37] "GET /api/jobs/921b90b0d8244168b9d63effa1467a31 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:37] "GET /api/jobs/921b90b0d8244168b9d63effa1467a31 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:37] "GET /api/jobs/921b90b0d8244168b9d63effa1467a31 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:38] "GET /api/jobs/921b90b0d8244168b9d63effa1467a31 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:38] "GET /api/jobs/921b90b0d8244168b9d63effa1467a31 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:38] "GET /api/jobs/921b90b0d8244168b9d63effa1467a31 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:39] "GET /api/jobs/921b90b0d8244168b9d63effa1467a31 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:39] "GET /api/jobs/921b90b0d8244168b9d63effa1467a31 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:39] "GET /api/jobs/921b90b0d8244168b9d63effa1467a31 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:40] "GET /api/jobs/921b90b0d8244168b9d63effa1467a31 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:40] "GET /api/jobs/921b90b0d8244168b9d63effa1467a31 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:40] "GET /api/jobs/921b90b0d8244168b9d63effa1467a31 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:41] "GET /api/jobs/921b90b0d8244168b9d63effa1467a31 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:41] "GET /api/jobs/921b90b0d8244168b9d63effa1467a31 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:41] "GET /api/jobs/921b90b0d8244168b9d63effa1467a31 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:42] "GET /api/jobs/921b90b0d8244168b9d63effa1467a31 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:42] "GET /api/jobs/921b90b0d8244168b9d63effa1467a31 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:42] "GET /api/results/dab3ca2438df41a09558ca8bf7965ea1/original.png HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:42] "GET /api/results/dab3ca2438df41a09558ca8bf7965ea1/annotated.png HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:42] "POST /api/jobs HTTP/1.1" 400 -
+127.0.0.1 - - [06/Oct/2026 20:29:42] "POST /api/models HTTP/1.1" 400 -
+127.0.0.1 - - [06/Oct/2026 20:29:42] "POST /api/settings HTTP/1.1" 403 -
+127.0.0.1 - - [06/Oct/2026 20:29:42] "GET /api/results/../../runtime.py HTTP/1.1" 404 -
+127.0.0.1 - - [06/Oct/2026 20:29:42] "GET /api/datasets/5a7b4ddc0bef4a35ae0cb9b7f9377863/files?kind=video HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:42] "GET /api/media/8c260a4c7ad06e188c6adb1763f9641f HTTP/1.1" 206 -
+127.0.0.1 - - [06/Oct/2026 20:29:42] "POST /api/jobs HTTP/1.1" 202 -
+127.0.0.1 - - [06/Oct/2026 20:29:42] "GET /api/jobs/d3bf22c044444a9f817691b7c484c2be HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:43] "GET /api/jobs/d3bf22c044444a9f817691b7c484c2be HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:43] "GET /api/jobs/d3bf22c044444a9f817691b7c484c2be HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:43] "GET /api/jobs/d3bf22c044444a9f817691b7c484c2be HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:43] "GET /api/results/39950c03068b4770999dffc5072cc37c/frame?index=3 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:43] "GET /api/results/39950c03068b4770999dffc5072cc37c/frame.jpg?index=3 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:43] "GET /api/results/39950c03068b4770999dffc5072cc37c/annotated.mp4 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:44] "POST /api/jobs HTTP/1.1" 202 -
+127.0.0.1 - - [06/Oct/2026 20:29:44] "GET /api/jobs/add54b64703b45babdacc31c6d2d15a2 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:44] "GET /api/jobs/add54b64703b45babdacc31c6d2d15a2 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:44] "POST /api/jobs HTTP/1.1" 202 -
+127.0.0.1 - - [06/Oct/2026 20:29:44] "GET /api/jobs/3a96e86ac9e8453bb8dedd9661f2c4cc HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:44] "GET /api/jobs/3a96e86ac9e8453bb8dedd9661f2c4cc HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:45] "GET /api/jobs/3a96e86ac9e8453bb8dedd9661f2c4cc HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:45] "POST /api/jobs HTTP/1.1" 202 -
+127.0.0.1 - - [06/Oct/2026 20:29:45] "POST /api/jobs HTTP/1.1" 400 -
+127.0.0.1 - - [06/Oct/2026 20:29:45] "POST /api/jobs/17b3e788ba9b4cd2924a2e1764f6e240/stop HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:45] "GET /api/jobs/17b3e788ba9b4cd2924a2e1764f6e240 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:45] "GET /api/jobs/17b3e788ba9b4cd2924a2e1764f6e240 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:46] "POST /api/datasets HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:46] "POST /api/jobs HTTP/1.1" 202 -
+127.0.0.1 - - [06/Oct/2026 20:29:46] "GET /api/jobs/019875ae0e4545bc91dc53c6f0720a52 HTTP/1.1" 200 -
+Ultralytics 8.4.170  Python-3.11.16 torch-2.14.0+cu126 CUDA:0 (Tesla V100-SXM2-16GB, 16384MiB)
+YOLO11n summary (fused): 100 layers, 2,652,436 parameters, 0 gradients, 6.7 GFLOPs
+127.0.0.1 - - [06/Oct/2026 20:29:46] "GET /api/jobs/019875ae0e4545bc91dc53c6f0720a52 HTTP/1.1" 200 -
+[34m[1mval: [0mFast image access  (ping: 0.10.0 ms, read: 788.566.0 MB/s, size: 175.7 KB)
+[K[34m[1mval: [0mScanning D:\APP\阿拉德英雄传\Work\webui\web\qa\fixtures\labels... 4 images, 0 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 4/4 674.7it/s 0.0s
+[34m[1mval: [0mNew cache created: D:\APP\\Work\webui\web\qa\fixtures\labels.cache
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 50% ━━━━━━────── 2/4 4.4it/s 0.1s<0.5s127.0.0.1 - - [06/Oct/2026 20:29:46] "GET /api/jobs/019875ae0e4545bc91dc53c6f0720a52 HTTP/1.1" 200 -
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 4/4 18.7it/s 0.2s
+                   all          4         18          1          1      0.995      0.907
+Speed: 0.7ms preprocess, 25.5ms inference, 0.0ms loss, 2.8ms postprocess per image
+127.0.0.1 - - [06/Oct/2026 20:29:47] "GET /api/jobs/019875ae0e4545bc91dc53c6f0720a52 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:51] "POST /api/models HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:51] "POST /api/jobs HTTP/1.1" 202 -
+127.0.0.1 - - [06/Oct/2026 20:29:51] "GET /api/jobs/019f87091d3f4947ae02a481e41dc192 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:52] "GET /api/jobs/019f87091d3f4947ae02a481e41dc192 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:52] "GET /api/jobs/019f87091d3f4947ae02a481e41dc192 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:52] "POST /api/models HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:52] "POST /api/jobs HTTP/1.1" 202 -
+127.0.0.1 - - [06/Oct/2026 20:29:52] "GET /api/jobs/b16a7c6d6d394a848e5766200d85e3f1 HTTP/1.1" 200 -
+Loading d:\app\\work\webui\web\qa\fixtures\onnx-detection.onnx for ONNX Runtime inference...
+Using ONNX Runtime 1.30.0 with CPUExecutionProvider
+127.0.0.1 - - [06/Oct/2026 20:29:52] "GET /api/jobs/b16a7c6d6d394a848e5766200d85e3f1 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:53] "GET /api/jobs/b16a7c6d6d394a848e5766200d85e3f1 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:53] "POST /api/settings HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:54] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:54] "GET /app.css HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:54] "GET /app.js HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:54] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:54] "GET /api/datasets/5a7b4ddc0bef4a35ae0cb9b7f9377863/files?kind=image&search=&offset=0&limit=80&model_id=8f4f320a99464c858f3d6211d53fb842 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:54] "GET /api/results/dab3ca2438df41a09558ca8bf7965ea1/result.json HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:54] "GET /api/results/dab3ca2438df41a09558ca8bf7965ea1/original.png?v=dab3ca2438df41a09558ca8bf7965ea1 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:54] "GET /api/thumb/bb2791aac135b17411cb02e67b25e5e2?v=1791289773.3339188 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:54] "GET /api/thumb/50e1de23d9a9012daf460bbecd9e22f7?v=1791289774.504707 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:54] "GET /api/thumb/56c2c33c00f6913ba83c2d772dbe8b1c?v=1791289773.3355398 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:54] "GET /api/thumb/473eeee1ead8d600c0cb4a86ec3dfb91?v=1791289773.336653 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:54] "GET /api/thumb/5d3a00326a2d4acc842ef4320a5f033b?v=1791289773.3389192 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:55] "POST /api/jobs HTTP/1.1" 202 -
+127.0.0.1 - - [06/Oct/2026 20:29:55] "GET /api/jobs/a3dc8203b36a4a57b1ec5546b55195eb HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:56] "GET /api/jobs/a3dc8203b36a4a57b1ec5546b55195eb HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:56] "GET /api/results/79d82bcd19f64d649e17273781099fa6/original.png?v=79d82bcd19f64d649e17273781099fa6 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:56] "GET /api/datasets/5a7b4ddc0bef4a35ae0cb9b7f9377863/files?kind=image&search=&offset=0&limit=80&model_id=8f4f320a99464c858f3d6211d53fb842 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:57] "GET /api/results/79d82bcd19f64d649e17273781099fa6/result.json?download=1 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:57] "POST /api/settings HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:57] "POST /api/models HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:57] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:57] "GET /api/datasets/5a7b4ddc0bef4a35ae0cb9b7f9377863/files?kind=image&search=&offset=0&limit=80&model_id=8f4f320a99464c858f3d6211d53fb842 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:57] "GET /api/results/79d82bcd19f64d649e17273781099fa6/result.json HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:57] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:57] "GET /api/datasets/5a7b4ddc0bef4a35ae0cb9b7f9377863/files?kind=image&search=&offset=0&limit=80&model_id=e910d7eff5164fbba19fe12a3a3f7b45 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:57] "GET /api/results/8d273232f50640f5bd9a6383dddd58c1/result.json HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:57] "GET /api/results/8d273232f50640f5bd9a6383dddd58c1/original.png?v=8d273232f50640f5bd9a6383dddd58c1 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:58] "GET /api/datasets/5a7b4ddc0bef4a35ae0cb9b7f9377863/files?kind=image&search=&offset=0&limit=80&model_id=8f4f320a99464c858f3d6211d53fb842 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:58] "GET /api/results/79d82bcd19f64d649e17273781099fa6/result.json HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:58] "GET /api/datasets/5a7b4ddc0bef4a35ae0cb9b7f9377863/files?kind=video&search=&offset=0&limit=80&model_id=8f4f320a99464c858f3d6211d53fb842 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:58] "GET /api/results/8c3004db67da4e7e975104acb2f272a3/result.json HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:58] "GET /api/results/8c3004db67da4e7e975104acb2f272a3/annotated.mp4 HTTP/1.1" 206 -
+127.0.0.1 - - [06/Oct/2026 20:29:58] "GET /api/results/8c3004db67da4e7e975104acb2f272a3/frame?index=0 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:58] "GET /api/thumb/c6fe0901499ffefbe2bea1d8af0e910e?v=1791289774.5023458 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:58] "GET /api/results/8c3004db67da4e7e975104acb2f272a3/frame?index=0 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:58] "GET /api/thumb/8c260a4c7ad06e188c6adb1763f9641f?v=1791289773.4419336 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:58] "GET /api/results/0458cb56487f40e58747882e9a8e3cd1/result.json HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:58] "GET /api/results/0458cb56487f40e58747882e9a8e3cd1/annotated.mp4 HTTP/1.1" 206 -
+127.0.0.1 - - [06/Oct/2026 20:29:58] "GET /api/results/0458cb56487f40e58747882e9a8e3cd1/frame?index=0 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:58] "GET /api/results/0458cb56487f40e58747882e9a8e3cd1/frame?index=0 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:58] "POST /api/settings HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:58] "GET /api/results/0458cb56487f40e58747882e9a8e3cd1/frame?index=3 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:59] "GET /api/results/0458cb56487f40e58747882e9a8e3cd1/frame?index=3 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:59] "GET /api/results/0458cb56487f40e58747882e9a8e3cd1/frame?index=3 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:59] "GET /api/results/0458cb56487f40e58747882e9a8e3cd1/original.mp4 HTTP/1.1" 206 -
+127.0.0.1 - - [06/Oct/2026 20:29:59] "GET /api/results/0458cb56487f40e58747882e9a8e3cd1/frame?index=3 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:59] "GET /api/results/8c3004db67da4e7e975104acb2f272a3/result.json HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:59] "GET /api/results/8c3004db67da4e7e975104acb2f272a3/frame?index=0 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:59] "GET /api/results/8c3004db67da4e7e975104acb2f272a3/frame?index=0 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:59] "POST /api/jobs HTTP/1.1" 202 -
+127.0.0.1 - - [06/Oct/2026 20:29:59] "GET /api/jobs/66b21a4c1d7c4aa2a1947f733d65b6ec HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:59] "GET /api/datasets/5a7b4ddc0bef4a35ae0cb9b7f9377863/files?kind=image&search=&offset=0&limit=80&model_id=8f4f320a99464c858f3d6211d53fb842 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:59] "GET /api/results/79d82bcd19f64d649e17273781099fa6/result.json HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:59] "POST /api/jobs/66b21a4c1d7c4aa2a1947f733d65b6ec/stop HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:29:59] "POST /api/settings HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:30:00] "GET /api/jobs/66b21a4c1d7c4aa2a1947f733d65b6ec HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:30:00] "GET /api/datasets/5a7b4ddc0bef4a35ae0cb9b7f9377863/files?kind=image&search=&offset=0&limit=80&model_id=8f4f320a99464c858f3d6211d53fb842 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:30:00] "GET /api/history HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:30:01] "GET /api/datasets/5a7b4ddc0bef4a35ae0cb9b7f9377863/files?kind=image&search=&offset=0&limit=80&model_id=8f4f320a99464c858f3d6211d53fb842 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:30:01] "GET /api/results/79d82bcd19f64d649e17273781099fa6/result.json HTTP/1.1" 200 -
+127.0.0.1 - - [06/Oct/2026 20:30:01] "POST /api/settings HTTP/1.1" 200 -

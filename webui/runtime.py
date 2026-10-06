@@ -33,8 +33,8 @@ def setup_ultralytics():
     from ultralytics import settings
     from ultralytics.utils import USER_CONFIG_DIR
     settings.update({
-        "datasets_dir": str(WORK), "weights_dir": str(TRAIN / "pretrained"),
-        "runs_dir": str(TRAIN / "runs"), "sync": False,
+        "datasets_dir": str(WEBUI / "data/datasets"), "weights_dir": str(WEBUI / "data/weights-cache"),
+        "runs_dir": str(WEBUI / "web/results"), "sync": False,
         **{key: False for key in ("clearml", "comet", "dvc", "mlflow", "raytune", "tensorboard", "wandb")},
     })
     # Use installed fonts for Chinese labels, avoiding font downloads.
